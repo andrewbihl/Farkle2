@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Farkle2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,133 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aq4-Bu-1OR">
+                                <rect key="frame" x="265" y="516" width="71" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Roll Dice"/>
+                                <connections>
+                                    <action selector="onRoll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQL-7h-vqh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlU-N9-i6k">
+                                <rect key="frame" x="55" y="55" width="114" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.9380679726600647" green="0.92464941740036011" blue="0.71967405080795288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2 Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MB-oQ-nXp">
+                                <rect key="frame" x="428" y="55" width="117" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.9380679726600647" green="0.92464941740036011" blue="0.71967405080795288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dieFace4" translatesAutoresizingMaskIntoConstraints="NO" id="Qam-Sl-GJc" customClass="DieImageView" customModule="Farkle2" customModuleProvider="target">
+                                <rect key="frame" x="188" y="267" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="mYr-RD-1Fl"/>
+                                    <constraint firstAttribute="width" constant="65" id="xcn-c8-srC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dieFace2" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-5A-wgK" customClass="DieImageView" customModule="Farkle2" customModuleProvider="target">
+                                <rect key="frame" x="268" y="187" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="MC0-3A-qMy"/>
+                                    <constraint firstAttribute="width" constant="65" id="mLm-Ee-wi9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dieFace6" translatesAutoresizingMaskIntoConstraints="NO" id="mRu-rh-rlE" customClass="DieImageView" customModule="Farkle2" customModuleProvider="target">
+                                <rect key="frame" x="348" y="267" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="HJe-Mp-I0V"/>
+                                    <constraint firstAttribute="width" constant="65" id="UYJ-5I-lX9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dieFace5" translatesAutoresizingMaskIntoConstraints="NO" id="OAp-7N-pR2" customClass="DieImageView" customModule="Farkle2" customModuleProvider="target">
+                                <rect key="frame" x="268" y="267" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Zqt-pH-Fub"/>
+                                    <constraint firstAttribute="height" constant="65" id="aOK-fG-c1A"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dieFace3" translatesAutoresizingMaskIntoConstraints="NO" id="N4x-CD-PPW" customClass="DieImageView" customModule="Farkle2" customModuleProvider="target">
+                                <rect key="frame" x="348" y="187" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="9dL-PB-MXR"/>
+                                    <constraint firstAttribute="height" constant="65" id="VmV-dr-3MZ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dieFace1" translatesAutoresizingMaskIntoConstraints="NO" id="xgV-gV-sKb" customClass="DieImageView" customModule="Farkle2" customModuleProvider="target">
+                                <rect key="frame" x="188" y="187" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="dDA-iR-vCK"/>
+                                    <constraint firstAttribute="width" constant="65" id="ldF-Fr-duk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wo-AR-st9">
+                                <rect key="frame" x="290" y="113" width="20" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.9380679726600647" green="0.92464941740036011" blue="0.71967405080795288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgt-OO-O5j">
+                                <rect key="frame" x="269" y="352" width="62" height="30"/>
+                                <state key="normal" title="End Turn"/>
+                                <connections>
+                                    <action selector="onEndTurn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfh-LG-mcy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="zgt-OO-O5j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Ic-Py-0Mf"/>
+                            <constraint firstItem="Qam-Sl-GJc" firstAttribute="top" secondItem="xgV-gV-sKb" secondAttribute="bottom" constant="15" id="4AT-AL-zLs"/>
+                            <constraint firstItem="mRu-rh-rlE" firstAttribute="top" secondItem="N4x-CD-PPW" secondAttribute="bottom" constant="15" id="6Hk-Zq-aLk"/>
+                            <constraint firstItem="mRu-rh-rlE" firstAttribute="leading" secondItem="OAp-7N-pR2" secondAttribute="trailing" constant="15" id="7sI-pU-k9Q"/>
+                            <constraint firstItem="zgt-OO-O5j" firstAttribute="top" secondItem="OAp-7N-pR2" secondAttribute="bottom" constant="20" id="8ZK-GT-8in"/>
+                            <constraint firstItem="b7E-5A-wgK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8gU-j5-lcA"/>
+                            <constraint firstItem="mlU-N9-i6k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="9oI-2L-BuD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aq4-Bu-1OR" secondAttribute="bottom" constant="50" id="GnP-38-MhX"/>
+                            <constraint firstItem="aq4-Bu-1OR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H76-8a-Tva"/>
+                            <constraint firstItem="b7E-5A-wgK" firstAttribute="top" secondItem="5Wo-AR-st9" secondAttribute="bottom" constant="35" id="Jgg-9q-1m5"/>
+                            <constraint firstItem="5Wo-AR-st9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P1o-u1-ih8"/>
+                            <constraint firstItem="OAp-7N-pR2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PeZ-Xy-7tU"/>
+                            <constraint firstItem="N4x-CD-PPW" firstAttribute="top" secondItem="b7E-5A-wgK" secondAttribute="top" id="VGb-X7-kIg"/>
+                            <constraint firstItem="OAp-7N-pR2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="W3G-dX-blq"/>
+                            <constraint firstItem="OAp-7N-pR2" firstAttribute="leading" secondItem="Qam-Sl-GJc" secondAttribute="trailing" constant="15" id="W6S-Pn-Btt"/>
+                            <constraint firstItem="7MB-oQ-nXp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="aRM-GY-yKI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7MB-oQ-nXp" secondAttribute="trailing" constant="35" id="ePd-dK-ue1"/>
+                            <constraint firstItem="N4x-CD-PPW" firstAttribute="leading" secondItem="b7E-5A-wgK" secondAttribute="trailing" constant="15" id="hed-aw-3ej"/>
+                            <constraint firstItem="xgV-gV-sKb" firstAttribute="top" secondItem="b7E-5A-wgK" secondAttribute="top" id="iEs-De-U9O"/>
+                            <constraint firstItem="OAp-7N-pR2" firstAttribute="top" secondItem="b7E-5A-wgK" secondAttribute="bottom" constant="15" id="jIT-Ji-3hC"/>
+                            <constraint firstItem="b7E-5A-wgK" firstAttribute="leading" secondItem="xgV-gV-sKb" secondAttribute="trailing" constant="15" id="maF-lp-h7j"/>
+                            <constraint firstItem="mlU-N9-i6k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="sc6-iC-IHm"/>
+                            <constraint firstItem="mRu-rh-rlE" firstAttribute="leading" secondItem="OAp-7N-pR2" secondAttribute="trailing" constant="15" id="ubB-LD-1SW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="endTurnButton" destination="zgt-OO-O5j" id="B0C-af-win"/>
+                        <outlet property="player1Label" destination="mlU-N9-i6k" id="sIS-oF-ocx"/>
+                        <outlet property="player2Label" destination="7MB-oQ-nXp" id="dNK-cC-O2K"/>
+                        <outlet property="turnScoreLabel" destination="5Wo-AR-st9" id="T1g-z0-dag"/>
+                        <outletCollection property="dice" destination="xgV-gV-sKb" collectionClass="NSMutableArray" id="L3s-xl-fHM"/>
+                        <outletCollection property="dice" destination="b7E-5A-wgK" collectionClass="NSMutableArray" id="q83-3p-3tF"/>
+                        <outletCollection property="dice" destination="N4x-CD-PPW" collectionClass="NSMutableArray" id="Y9X-jX-iLW"/>
+                        <outletCollection property="dice" destination="Qam-Sl-GJc" collectionClass="NSMutableArray" id="uZ0-q9-9X5"/>
+                        <outletCollection property="dice" destination="OAp-7N-pR2" collectionClass="NSMutableArray" id="z3U-GK-kQZ"/>
+                        <outletCollection property="dice" destination="mRu-rh-rlE" collectionClass="NSMutableArray" id="S3z-0I-5OA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="349"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dieFace1" width="319" height="313"/>
+        <image name="dieFace2" width="319" height="313"/>
+        <image name="dieFace3" width="319" height="313"/>
+        <image name="dieFace4" width="319" height="313"/>
+        <image name="dieFace5" width="319" height="313"/>
+        <image name="dieFace6" width="319" height="313"/>
+    </resources>
 </document>
